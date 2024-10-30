@@ -1,20 +1,26 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">WarungTikungan</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary shadow bg-light text-center" id="Navbar">
+    <div class="container-fluid text-center">
+        <img src="{{asset('img/logouhuy.png')}}" alt="logo" width="100px">
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                    <a class="nav-link active text-dark" aria-current="page" href="/dashboard">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Pemesanan</a>
+                    <a class="nav-link text-dark" aria-current="page" href="/pemesanan">Pemesanan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Pembayaran</a>
+                    <a class="nav-link text-dark" aria-current="page" href="#">Pembayaran</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" aria-current="page" href="#">Daftar Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" aria-current="page" href="#">Laporan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" aria-current="page" href="#">Pengaturan</a>
                 </li>
             </ul>
         </div>
