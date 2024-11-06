@@ -14,6 +14,14 @@ Route::get('/pemesanan', function () {
     return view('content.pemesanan');
 });
 
-Route::get('/beranda', function () {
-    return view('content.beranda');
+Route::get('/pembayaran', function () {
+    return view('content.pembayaran');
+});
+
+Route::get('/menu', function () {
+    return view('content.daftarMenu');
+});
+
+Route::get('/laporan', function () {
+    return view('content.laporan');
 });

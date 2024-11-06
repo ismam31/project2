@@ -1,19 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warung Tikungan</title>
-    <!-- AdminLTE App -->
-    <link rel="stylesheet" href="{{('../app/dist/css/adminlte.min.css')}}">
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"/>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{asset('assets/plugins/fontawesome-free/css/all.min.css')}}"/>
-    <!-- Theme style -->
-    <link rel="stylesheet" href="{{asset('assets/dist/css/adminlte.min.css')}}"/>
-</head>
-<body>
-    @include('layouts.navigasi')
-</body>
-</html>
+
+<x-layout>
+    <div class="content mt-3">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Pesan Baru</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form action="#" method="POST">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="namaTamu">Nama</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa-solid fa-boxes-stacked"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" name="namaTamu" id="namaTamu"
+                                            placeholder="Nama" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="jumlahTamu">Jumlah Tamu</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa-solid fa-boxes-stacked"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" name="jmlTamu" id="jumlahTamu"
+                                            placeholder="Jumlah Tamu" autocomplete="off" data-type="currency" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="jenisPesanan">Pilih Metode</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa-solid fa-boxes-stacked"></i>
+                                            </span>
+                                        </div>
+                                        <select class="form-control" id="metodeFormControlSelect1">
+                                            <option>Dine In</option>
+                                            <option>Take Away</option>
+                                            <option>Delivery</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nomorMeja">Nomor Meja</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                Rp
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" id="nomorMeja" name="nomorMeja"
+                                            placeholder="Nomor Meja" autocomplete="off" data-type="currency" />
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <button class="btn btn-success" type="submit" name="submit"
+                                    id="TambahBarangButton" onclick="tambahBarang()">
+                                    Tambah Pesan
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+</x-layout>
