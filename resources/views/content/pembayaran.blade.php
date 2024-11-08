@@ -26,7 +26,7 @@
         ["nama" => "zahran", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
         ["nama" => "adi", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
         ["nama" => "sony", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
-        ["nama" => "afif", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
+        ["nama" => "Isman", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
         
     ];
 
