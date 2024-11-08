@@ -21,12 +21,12 @@
         ["nama" => "Ninda", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
         ["nama" => "Ismam", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
         ["nama" => "Ilham", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
-        ["nama" => "faqih", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
-        ["nama" => "ubay", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
-        ["nama" => "zahran", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
-        ["nama" => "adi", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
-        ["nama" => "sony", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
-        ["nama" => "afif", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
+        ["nama" => "Faqih", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
+        ["nama" => "Ubay", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
+        ["nama" => "Zahran", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
+        ["nama" => "Adi", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
+        ["nama" => "Khandara", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
+        ["nama" => "Afif", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
         
     ];
 
