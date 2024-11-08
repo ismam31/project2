@@ -29,7 +29,7 @@
         ["nama" => "Afif", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
         
     ];
-
+    
     // Loop untuk menampilkan setiap kartu tamu
     foreach ($guests as $guest) {
         echo '<div class="card">';
