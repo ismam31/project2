@@ -19,6 +19,7 @@
 <body>
 
 <div class="card-container">
+    
     <?php
     // Data tamu dalam bentuk array
     $guests = [
