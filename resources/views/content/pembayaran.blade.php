@@ -1,5 +1,5 @@
 <x-layout>
-    
+
 <div class="content mt-3">
     <div class="container-fluid">
         <div class="row">
