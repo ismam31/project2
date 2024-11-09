@@ -12,7 +12,9 @@
                     </div>
                      
 </head>
+
 <body>
+
 
 <div class="card-container">
     <?php
@@ -44,14 +46,9 @@
         echo '</div>';
     }
     ?>
-</div>
+    
+</body>
 
-               
-                </div>
-                <!-- /.card -->
-            </div>
-        </div>
-    </div>
-    <!-- /.row -->
-</div>
+
 </x-layout>
+
