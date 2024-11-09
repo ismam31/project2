@@ -1,5 +1,7 @@
 <x-layout>
 
+<head>
+    
 <div class="content mt-3">
     <div class="container-fluid">
         <div class="row">
@@ -13,8 +15,9 @@
                     </div>
                      
 </head>
-<body>
 
+<body>
+    
 <div class="card-container">
     <?php
     // Data tamu dalam bentuk array
@@ -45,5 +48,8 @@
         echo '</div>';
     }
     ?>
+
+</body>
+
 
 </x-layout>
