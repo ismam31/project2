@@ -17,39 +17,73 @@
 </head>
 
 <body>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .card {
+            width: 30%;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #40739e;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+        }
+        .title {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .content {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
 
-<div class="card-container">
-    
+<div class="header">
+    <h1>Daftar Pesanan</h1>
+</div>
+
+<div class="container">
     <?php
-    // Data tamu dalam bentuk array
-    $guests = [
-        ["nama" => "Ninda", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
-        ["nama" => "Ismam", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
-        ["nama" => "Ilham", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
-        ["nama" => "Faqih", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
-        ["nama" => "Ubay", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
-        ["nama" => "Zahran", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
-        ["nama" => "Adi", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
-        ["nama" => "Khandara", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
-        ["nama" => "Afif", "jumlah_tamu" => 8, "jenis" => "Dine In", "no_meja" => "05", "tanggal" => "24 September 2024"],
-        
+    // Daftar pesanan
+    $pesanan = [
+        ['nama' => 'Ninda', 'jumlah_tamu' => 8, 'jenis' => 'Dine In', 'no_meja' => '05', 'tanggal' => '24 September 2024'],
+        ['nama' => 'Isman', 'jumlah_tamu' => 8, 'jenis' => 'Dine In', 'no_meja' => '05', 'tanggal' => '24 September 2024'],
+        ['nama' => 'Ilham', 'jumlah_tamu' => 8, 'jenis' => 'Dine In', 'no_meja' => '05', 'tanggal' => '24 September 2024'],
+        ['nama' => 'Imam', 'jumlah_tamu' => 8, 'jenis' => 'Dine In', 'no_meja' => '05', 'tanggal' => '24 September 2024'],
+        ['nama' => 'Isman', 'jumlah_tamu' => 8, 'jenis' => 'Dine In', 'no_meja' => '05', 'tanggal' => '24 September 2024'],
+        ['nama' => 'Isman', 'jumlah_tamu' => 8, 'jenis' => 'Dine In', 'no_meja' => '05', 'tanggal' => '24 September 2024'],
     ];
-    
-    // Loop untuk menampilkan setiap kartu tamu
-    foreach ($guests as $guest) {
+
+    // Looping untuk menampilkan setiap kartu pesanan
+    foreach ($pesanan as $index => $data) {
         echo '<div class="card">';
-        echo '<div class="card-header">1</div>';
-        echo '<div class="card-content">';
-        echo '<p><strong>Nama</strong> <span style="float: right;">' . htmlspecialchars($guest["nama"]) . '</span></p>';
-        echo '<p><strong>Jumlah Tamu</strong> <span style="float: right;">' . htmlspecialchars($guest["jumlah_tamu"]) . '</span></p>';
-        echo '<p><strong>Jenis</strong> <span style="float: right;">' . htmlspecialchars($guest["jenis"]) . '</span></p>';
-        echo '<p><strong>No. Meja</strong> <span style="float: right;">' . htmlspecialchars($guest["no_meja"]) . '</span></p>';
-        echo '<p><strong>Tanggal</strong> <span style="float: right;">' . htmlspecialchars($guest["tanggal"]) . '</span></p>';
+        echo '<div class="title"> ' . ($index + 1) . ' </div>';
+        echo '<div class="content">';
+        echo '<p><strong>Nama:</strong> ' . $data['nama'] . '</p>';
+        echo '<p><strong>Jumlah Tamu:</strong> ' . $data['jumlah_tamu'] . '</p>';
+        echo '<p><strong>Jenis:</strong> ' . $data['jenis'] . '</p>';
+        echo '<p><strong>No. Meja:</strong> ' . $data['no_meja'] . '</p>';
+        echo '<p><strong>Tanggal:</strong> ' . $data['tanggal'] . '</p>';
         echo '</div>';
         echo '</div>';
     }
     ?>
-
+</div>
 </body>
 
 
