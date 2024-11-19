@@ -25,3 +25,7 @@ Route::get('/menu', function () {
 Route::get('/laporan', function () {
     return view('content.laporan');
 });
+
+Route::get('/profile', function () {
+    return view('profile.profile');
+});

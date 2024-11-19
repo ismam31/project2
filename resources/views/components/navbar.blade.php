@@ -38,8 +38,7 @@
                     <img src="img/profile.jpg" width="30" height="30" class="rounded-circle" alt="Profile">
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
-                    <a class="dropdown-item" href="#">Your Profile</a>
-                    <a class="dropdown-item" href="#">Settings</a>
+                    <a class="dropdown-item" href="profile">Your Profile</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Sign out</a>
                 </div>
