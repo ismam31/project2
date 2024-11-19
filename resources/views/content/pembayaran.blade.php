@@ -20,34 +20,69 @@
 
 <div class="card-container">
     
-<?php
-    // Daftar pesanan
-    $pesanan = [
-        ['nama' => 'Ninda', 'jumlah_tamu' => 8, 'jenis' => 'Dine In', 'no_meja' => '05', 'tanggal' => '24 September 2024'],
-        ['nama' => 'Ismam', 'jumlah_tamu' => 8, 'jenis' => 'Dine In', 'no_meja' => '05', 'tanggal' => '24 September 2024'],
-        ['nama' => 'Ilham', 'jumlah_tamu' => 8, 'jenis' => 'Dine In', 'no_meja' => '05', 'tanggal' => '24 September 2024'],
-        ['nama' => 'Faqih', 'jumlah_tamu' => 8, 'jenis' => 'Dine In', 'no_meja' => '05', 'tanggal' => '24 September 2024'],
-        ['nama' => 'Adi', 'jumlah_tamu' => 8, 'jenis' => 'Dine In', 'no_meja' => '05', 'tanggal' => '24 September 2024'],
-        ['nama' => 'Zahran', 'jumlah_tamu' => 8, 'jenis' => 'Dine In', 'no_meja' => '05', 'tanggal' => '24 September 2024'],
-        ['nama' => 'Ubay', 'jumlah_tamu' => 8, 'jenis' => 'Dine In', 'no_meja' => '05', 'tanggal' => '24 September 2024'],
-        ['nama' => 'Afif', 'jumlah_tamu' => 8, 'jenis' => 'Dine In', 'no_meja' => '05', 'tanggal' => '24 September 2024'],
-    ];
-
-    // Looping untuk menampilkan setiap kartu pesanan
-    foreach ($pesanan as $index => $data) {
-        echo '<div class="card">';
-        echo '<div class="card-header">' . ($index + 1) . '</div>'; // Menampilkan angka di atas kartu
-        echo '<div class="card-content">';
-        echo '<p><strong>Nama:</strong> <span style="float: right;">'  . $data['nama'] . '</span></p>';
-        echo '<p><strong>Jumlah Tamu:</strong> <span style="float: right;">'  . $data['jumlah_tamu'] . '</span></p>';
-        echo '<p><strong>Jenis:</strong> <span style="float: right;">' . $data['jenis'] . '</span></p>';
-        echo '<p><strong>No. Meja:</strong> <span style="float: right;">'  . $data['no_meja'] . '</span></p>';
-        echo '<p><strong>Tanggal:</strong> <span style="float: right;">' . $data['tanggal'] . '</span></p>';
-        echo '</div>';
-        echo '</div>';
-    }
-    ?>
-
+<div class="container-fluid">
+                    
+                               
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-12">
+                                            <div class="info-box">
+                                                <div class="info-box-content text-dark">
+                                                    <div class="table table-responsive">
+                                                        <a href="makanan.php">
+                                                                    <table class="col-6 col-sm-12 col-md-12 text-secondary">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>No</th>
+                                                                                <th>Nama</th>
+                                                                                <th>Jumlah Tamu</th>
+                                                                                <th>Jenis</th>
+                                                                                <th>Nomor Meja</th>
+                                                                                <th>Tanggal</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <?php
+                                                                                $no = 0;
+                                                                            ?>
+                                                                            <tr>
+                                                                                        <td>1</td>
+                                                                                        <td>Ismam</td>
+                                                                                        <td>12</td>
+                                                                                        <td>Dine In</td>
+                                                                                        <td>4</td>  
+                                                                                        <td>19 November 2024</td>
+                                                                                </tr>
+                                                                        </tbody>
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>No</th>
+                                                                                <th>Nama</th>
+                                                                                <th>Jumlah Tamu</th>
+                                                                                <th>Jenis</th>
+                                                                                <th>Nomor Meja</th>
+                                                                                <th>Tanggal</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                            </table>
+                                                                    </a>
+                                                    </div>
+                                                </div>
+                                                <!-- /.info-box-content -->
+                                            </div>
+                                            <!-- /.info-box -->
+                                        </div>
+                                        <!-- /.col -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
 </body>
 
 
