@@ -25,9 +25,10 @@ Route::get('/menu', function () {
     return view('content.daftarMenu');
 });
 
-Route::get('/laporan', function () {
-    return view('content.laporan');
-});
+use App\Http\Controllers\LaporanController;
+
+Route::get('/laporan', [LaporanController::class, 'index'])->name('content.laporan');
+
 
 Route::get('/profile', function () {
     return view('profile.profile');
