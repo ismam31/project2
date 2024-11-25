@@ -10,7 +10,7 @@
             display: inline-block;
         }
     </style>
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+<nav class="navbar sticky-top navbar-light bg-light navbar-expand-lg navbar-light bg-light shadow">
     <img src="{{ asset('img/logouhuy.png') }}" alt="Logo" width="70" class="ml-4">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

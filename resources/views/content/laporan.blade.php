@@ -17,7 +17,6 @@
 
     <!-- Container -->
     <div class="container mt-4">
-        <h1 class="text-center">Laporan</h1>
         <div class="row">
             @foreach ($laporanDates as $date)
                 <div class="col-md-4 mb-3">

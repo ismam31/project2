@@ -3,10 +3,19 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\OrderController;
 
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+
+Route::get('/pemesanan', [OrderController::class, 'create'])->name('order.create');
+Route::post('/pemesanan', [OrderController::class, 'store'])->name('order.store');
+
+Route::get('/pembayaran', [OrderController::class, 'index'])->name('content.pembayaran');
+
+
 
 Route::get('/dashboard', function () {
     return 'Welcome to the Dashboard!';
@@ -20,13 +29,6 @@ Route::get('/dashboard', function () {
     return view('content.dashboard');
 });
 
-Route::get('/pemesanan', function () {
-    return view('content.pemesanan');
-});
-
-Route::get('/pembayaran', function () {
-    return view('content.pembayaran');
-});
 
 Route::get('/menu', function () {
     return view('content.daftarMenu');

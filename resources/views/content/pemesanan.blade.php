@@ -10,8 +10,26 @@
                             <h3 class="card-title">Pesan Baru</h3>
                         </div>
                         <!-- /.card-header -->
+                        <!-- Tampilkan pesan sukses -->
+                        @if(session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+                        <!-- Tampilkan error validasi -->
+                        @if($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
                         <!-- form start -->
-                        <form action="#" method="POST">
+                        <form action="{{ route('order.store') }}" method="POST">
+                            @csrf
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="namaTamu">Nama</label>
@@ -21,8 +39,8 @@
                                                 <i class="fa-solid fa-boxes-stacked"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" name="namaTamu" id="namaTamu"
-                                            placeholder="Nama" autocomplete="off" />
+                                        <input type="text" class="form-control" name="name" id="namaTamu"
+                                            placeholder="Nama" autocomplete="off" value="{{ old('name') }}" />
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -33,8 +51,8 @@
                                                 <i class="fa-solid fa-boxes-stacked"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" name="jmlTamu" id="jumlahTamu"
-                                            placeholder="Jumlah Tamu" autocomplete="off" data-type="currency" />
+                                        <input type="text" class="form-control" name="guest_count" id="jumlahTamu"
+                                            placeholder="Jumlah Tamu" autocomplete="off" data-type="currency" value="{{ old('guest_count') }}" />
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -45,10 +63,11 @@
                                                 <i class="fa-solid fa-boxes-stacked"></i>
                                             </span>
                                         </div>
-                                        <select class="form-control" id="metodeFormControlSelect1">
-                                            <option>Dine In</option>
-                                            <option>Take Away</option>
-                                            <option>Delivery</option>
+                                        <select class="form-control" name="category" id="metodeFormControlSelect1">
+                                            <option value="" disabled selected>Pilih Kategori</option>
+                                            <option value="Dine In" {{ old('category') == 'Dine In' ? 'selected' : '' }}>Dine In</option>
+                                            <option value="Take Away" {{ old('category') == 'Take Away' ? 'selected' : '' }}>Take Away</option>
+                                            <option value="Delivery" {{ old('category') == 'Delivery' ? 'selected' : '' }}>Delivery</option>
                                         </select>
                                     </div>
                                 </div>
@@ -57,10 +76,10 @@
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">
-                                                Rp
+                                                <i class="fa-solid fa-boxes-stacked"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" id="nomorMeja" name="nomorMeja"
+                                        <input type="text" class="form-control" id="nomorMeja" name="table_number"
                                             placeholder="Nomor Meja" autocomplete="off" data-type="currency" />
                                     </div>
                                 </div>
