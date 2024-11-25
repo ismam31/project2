@@ -29,16 +29,23 @@
         <div class="card card-login mt-5">
             <div class="card-body">
                 <h1 class="text-center mt-5">M A S U K</h1>
-                <form action="" method="#">
+                <form action="{{route('login')}}" method="POST">
+                    @csrf
                     <div class="form-floating m-3 mt-5">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
                         <label for="floatingInput">Email address</label>
                     </div>
                     <div class="form-floating m-3">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
                         <label for="floatingPassword">Password</label>
                     </div>
-                    <button type="submit" class="btn btn-primary m-3"><a href="dashboard" class="text-white">Submit</a></button>
+                    <button type="submit" class="btn btn-primary m-3">Submit</button>
+                    <!-- Menampilkan pesan error -->
+                    @if ($errors->has('login_error'))
+                    <div class="alert alert-danger">
+                        {{ $errors->first('login_error') }}
+                    </div>
+                    @endif
                 </form>
             </div>
         </div>

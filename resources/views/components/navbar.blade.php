@@ -40,7 +40,10 @@
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
                     <a class="dropdown-item" href="profile">Your Profile</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Sign out</a>
+                    <form action="{{ route('logout')}}" method="POST">
+                        @csrf
+                        <button class="dropdown-item" type="submit">Sign out</button>
+                    </form>
                 </div>
             </div>
         </ul>
