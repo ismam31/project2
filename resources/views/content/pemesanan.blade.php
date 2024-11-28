@@ -1,4 +1,3 @@
-
 <x-layout>
     <div class="content mt-3">
         <div class="container-fluid">
@@ -26,7 +25,6 @@
                                 </ul>
                             </div>
                         @endif
-
                         <!-- form start -->
                         <form action="{{ route('order.store') }}" method="POST">
                             @csrf
@@ -36,7 +34,7 @@
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">
-                                                <i class="fa-solid fa-boxes-stacked"></i>
+                                                <i class="fas fa-user"></i>
                                             </span>
                                         </div>
                                         <input type="text" class="form-control" name="name" id="namaTamu"
@@ -48,7 +46,7 @@
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">
-                                                <i class="fa-solid fa-boxes-stacked"></i>
+                                                <i class="fas fa-users"></i>
                                             </span>
                                         </div>
                                         <input type="text" class="form-control" name="guest_count" id="jumlahTamu"
@@ -60,7 +58,7 @@
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">
-                                                <i class="fa-solid fa-boxes-stacked"></i>
+                                                <i class="fas fa-thumbs-up"></i>
                                             </span>
                                         </div>
                                         <select class="form-control" name="category" id="metodeFormControlSelect1">
@@ -76,7 +74,7 @@
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">
-                                                <i class="fa-solid fa-boxes-stacked"></i>
+                                                <i class="fas fa-store"></i>
                                             </span>
                                         </div>
                                         <input type="text" class="form-control" id="nomorMeja" name="table_number"

@@ -5,7 +5,7 @@
                 <div class="col-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <a href="#">
+                            <a href="menu">
                                 <h3 class="card-title text-white">
                                     Tambah Menu
                                 </h3>
@@ -31,19 +31,25 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @forelse ($menus as $index => $menu)
                                             <tr>
                                                 <td hidden></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>{{ $index + 1 }}</td>
+                                                <td>{{ $menu -> gambar }}</td>
+                                                <td>{{ $menu -> nama_barang }}</td>
+                                                <td style="text-align:center;">{{ $menu -> jumlah_barang }}</td>
+                                                <td style="text-align:right;">{{ number_format ( $menu -> harga_modal) }}</td>
+                                                <td style="text-align:right;">{{ number_format ( $menu -> harga_jual ) }}</td>
                                                 <td style="text-align:center;">
                                                 <a href ="#"><i class="fas fa-edit fa-2x" aria-hidden="true"></i></a>
                                                 <a href="#"><i class="fa fa-trash fa-2x" style="color:red;" aria-hidden="true"></i></a>
-                                            </td>
+                                                </td>
                                             </tr>
+                                            @empty
+                                            <tr>
+                                                <td colspan="8" class="text-center">Data tidak ditemukan</td>
+                                            </tr>
+                                            @endforelse
                                         </tbody>
                                         <tfoot>
                                             <tr>

@@ -27,7 +27,7 @@
                 <a class="nav-link active {{request()->is('pembayaran') ? 'bg-secondary rounded text-white' : ''}}" href="/pembayaran">Pembayaran</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active {{request()->is('menu') ? 'bg-secondary rounded text-white' : ''}}" href="/menu">Daftar Menu</a>
+                <a class="nav-link active {{request()->is('menus') ? 'bg-secondary rounded text-white' : ''}}" href="/menus">Daftar Menu</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active {{request()->is('laporan') ? 'bg-secondary rounded text-white' : ''}}" href="/laporan">Laporan</a>
