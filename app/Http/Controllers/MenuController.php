@@ -40,7 +40,7 @@ class MenuController extends Controller
             'gambar' => $gambar,
         ]);
 
-        return redirect()->route('menus.index')->with('success', 'Menu berhasil ditambahkan.');
+        return redirect()->route('content.daftarMenu')->with('success', 'Menu berhasil ditambahkan.');
     }
     
     public function index()
