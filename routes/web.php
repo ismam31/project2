@@ -20,6 +20,10 @@ Route::get('/menu', [MenuController::class, 'create'])->name('menu.create');
 Route::post('/menu', [MenuController::class, 'store'])->name('menu.store');
 Route::get('/menus', [MenuController::class, 'index'])->name('content.daftarMenu');
 
+Route::get('/menu/{id}/edit', [MenuController::class, 'edit'])->name('menu.edit');
+Route::delete('/menu/{id}', [MenuController::class, 'destroy'])->name('menu.destroy');
+
+
 Route::get('/dashboard', function () {
     return 'Welcome to the Dashboard!';
 })->middleware('auth');

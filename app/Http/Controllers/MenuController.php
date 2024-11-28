@@ -40,8 +40,48 @@ class MenuController extends Controller
             'gambar' => $gambar,
         ]);
 
-        return redirect()->route('menus.index')->with('success', 'Menu berhasil ditambahkan.');
+        return redirect()->route('content.daftarMenu')->with('success', 'Menu berhasil ditambahkan.');
     }
+
+    public function edit($id)
+    {
+        $menu = Menu::findOrFail($id); // Cari data menu berdasarkan ID
+        return view('menu.edit', compact('menu')); // Tampilkan view edit
+    }
+
+
+
+    public function update(Request $request, $id)
+    {
+        // Validasi input
+        $validated = $request->validate([
+            'nama_barang' => 'required|string|max:255',
+            'jumlah_barang' => 'required|integer',
+            'harga_modal' => 'required|numeric',
+            'harga_jual' => 'required|numeric',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        // Cari menu berdasarkan ID
+        $menu = Menu::findOrFail($id);
+
+        // Update data menu
+        $menu->update($validated);
+
+        return redirect()->route('content.daftarMenu')->with('success', 'Menu berhasil diupdate!');
+    }
+
+    public function destroy($id)
+    {
+        // Cari menu berdasarkan ID
+        $menu = Menu::findOrFail($id);
+
+        // Hapus menu
+        $menu->delete();
+
+        return redirect()->back()->with('success', 'Menu berhasil dihapus!');
+    }
+
     
     public function index()
     {

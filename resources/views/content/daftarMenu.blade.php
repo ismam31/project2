@@ -12,7 +12,8 @@
                             </a>
                         </div>
                         <!-- /.card-header -->
-                        <form action="daftarBarang.php?page=admin&action=update" method="GET">
+                        <!-- form start -->
+                        <form action="" method="POST">
                             <div class="card-body">
                                 <div class="table table-responsive">
                                     <table id="daftarBarangTable"
@@ -41,8 +42,18 @@
                                                 <td style="text-align:right;">{{ number_format ( $menu -> harga_modal) }}</td>
                                                 <td style="text-align:right;">{{ number_format ( $menu -> harga_jual ) }}</td>
                                                 <td style="text-align:center;">
-                                                <a href ="#"><i class="fas fa-edit fa-2x" aria-hidden="true"></i></a>
-                                                <a href="#"><i class="fa fa-trash fa-2x" style="color:red;" aria-hidden="true"></i></a>
+                                                    <!-- Edit Button -->
+                                                    <a href="{{ route('menu.edit', $menu->id) }}">
+                                                        <i class="fas fa-edit fa-2x" aria-hidden="true"></i>
+                                                    </a>
+                                                    <!-- Delete Button -->
+                                                    <form action="{{ route('menu.destroy', $menu->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Apakah anda yakin ingin menghapus data ini?')">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" style="background:none; border:none; color:red;">
+                                                            <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
+                                                        </button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                             @empty
@@ -66,8 +77,7 @@
                                     </table>
                                 </div>
                             </div>
-                            </p>
-                            <!-- /.card-body -->
+                        </form>    <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
                 </div>
