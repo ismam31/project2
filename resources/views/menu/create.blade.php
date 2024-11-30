@@ -19,7 +19,7 @@
                             </div>
                         @endif
                         <!-- form start -->
-                        <form action="{{ route('menu.store') }}" method="POST" encytype="multipart/form-data">
+                        <form action="{{ route('menu.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
@@ -44,6 +44,23 @@
                                         </div>
                                         <input type="number" class="form-control" name="jumlah_barang" id="jumlah_barang"
                                             placeholder="Jumlah Menu" autocomplete="off" data-type="currency"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="jenisPesanan">Kategori</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fas fa-thumbs-up"></i>
+                                            </span>
+                                        </div>
+                                        <select class="form-control" name="category" id="metodeFormControlSelect1">
+                                            <option value="" disabled selected>Pilih Kategori</option>
+                                            <option value="Makanan" {{ old('category') == 'Makanan' ? 'selected' : '' }}>Makanan</option>
+                                            <option value="Minuman" {{ old('category') == 'Minuman' ? 'selected' : '' }}>Minuman</option>
+                                            <option value="Snack" {{ old('category') == 'Snack' ? 'selected' : '' }}>Snack</option>
+                                            <option value="Kopi" {{ old('category') == 'Kopi' ? 'selected' : '' }}>Kopi</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">

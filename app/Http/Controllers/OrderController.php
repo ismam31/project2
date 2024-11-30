@@ -30,6 +30,20 @@ class OrderController extends Controller
             'table_number' => $request->input('table_number'),
         ]);
 
+        $request->validate([
+            'menu_id' => 'required|exists:menus,id',
+        ]);
+    
+        // Ambil data menu berdasarkan ID
+        $menu = Menu::findOrFail($request->menu_id);
+    
+        // Simpan ke tabel pemesanan
+        Order::create([
+            'menu_id' => $menu->id,
+            'jumlah' => 1, // Default jumlah 1
+            'total_harga' => $menu->harga_jual,
+        ]);
+
         return redirect()->back()->with('success', 'Pesanan berhasil ditambahkan!');
     }
 

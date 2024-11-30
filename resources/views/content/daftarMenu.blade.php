@@ -36,7 +36,8 @@
                                             <tr>
                                                 <td hidden></td>
                                                 <td>{{ $index + 1 }}</td>
-                                                <td>{{ $menu -> gambar }}</td>
+                                                <td><img src="{{ asset('storage/product/' . $menu->gambar) }}" alt="{{ $menu->nama_barang }}" width="100">
+                                                </td>
                                                 <td>{{ $menu -> nama_barang }}</td>
                                                 <td style="text-align:center;">{{ $menu -> jumlah_barang }}</td>
                                                 <td style="text-align:right;">{{ number_format ( $menu -> harga_modal) }}</td>

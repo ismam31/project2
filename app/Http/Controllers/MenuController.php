@@ -18,15 +18,23 @@ class MenuController extends Controller
         $request->validate([
             'nama_barang' => 'required|string|max:255',
             'jumlah_barang' => 'required|integer',
+            'category' => 'required|in:Makanan, Minuman, Snack, Kopi',
             'harga_modal' => 'required|numeric',
             'harga_jual' => 'required|numeric',
-            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $gambar = null;
+        // Proses upload gambar
         if ($request->hasFile('gambar')) {
-            $gambar = $request->file('gambar')->store('images', 'public');
+            $fileName = time() . '.' . $request->gambar->extension();
+            $request->gambar->storeAs('public/menus', $fileName); // Simpan ke storage/app/public/menu
+        } else {
+            $fileName = null;
         }
+        // $gambar = null;
+        // if ($request->hasFile('gambar')) {
+        //     $gambar = $request->file('gambar')->store('images', 'public');
+        // }
 
         // Hitung persenan harga jual
         $persenan = (($request->harga_jual - $request->harga_modal) / $request->harga_modal) * 100;
@@ -34,10 +42,11 @@ class MenuController extends Controller
         Menu::create([
             'nama_barang' => $request->nama_barang,
             'jumlah_barang' => $request->jumlah_barang,
+            'category' => $request->category,
             'harga_modal' => $request->harga_modal,
             'harga_jual' => $request->harga_jual,
             'persenan' => $persenan,
-            'gambar' => $gambar,
+            'gambar' => $fileName,
         ]);
 
         return redirect()->route('content.daftarMenu')->with('success', 'Menu berhasil ditambahkan.');
@@ -87,5 +96,29 @@ class MenuController extends Controller
     {
         $menus = Menu::all(); // Mengambil semua data menu dari database
         return view('content.daftarMenu', compact('menus')); // Mengirim data ke view
+    }
+    
+    public function getMakanan()
+    {
+        $menus = Menu::where('category', 'Makanan')->get();
+        return view('product.makanan', compact('menus'));
+    }
+
+    public function getMinuman()
+    {
+        $menus = Menu::where('category', 'Minuman')->get();
+        return view('product.minuman', compact('menus'));
+    }
+
+    public function getSnack()
+    {
+        $menus = Menu::where('category', 'Snack')->get();
+        return view('product.snack', compact('menus'));
+    }
+
+    public function getKopi()
+    {
+        $menus = Menu::where('category', 'Kopi')->get();
+        return view('product.kopi', compact('menus'));
     }
 }

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_barang');
             $table->integer('jumlah_barang');
+            $table->enum('category', ['Makanan', 'Minuman', 'Snack', 'Kopi'])->after('nama_barang');
             $table->decimal('harga_modal', 10, 2);
             $table->decimal('harga_jual', 10, 2);
             $table->decimal('persenan', 5, 2); // Menyimpan persentase margin harga
@@ -30,5 +31,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('menus');
+        Schema::table('menus', function (Blueprint $table) {
+            $table->dropColumn('category');
+        });
     }
 };
