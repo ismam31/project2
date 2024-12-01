@@ -19,7 +19,7 @@ return new class extends Migration
             $table->decimal('harga_modal', 10, 2);
             $table->decimal('harga_jual', 10, 2);
             $table->decimal('persenan', 5, 2); // Menyimpan persentase margin harga
-            $table->string('gambar')->nullable(); // Untuk menyimpan path gambar
+            $table->enum('gambar')->nullable(); // Untuk menyimpan path gambar
             $table->timestamps();
         });
     }

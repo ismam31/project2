@@ -27,9 +27,9 @@ class MenuController extends Controller
         // Proses upload gambar
         if ($request->hasFile('gambar')) {
             $fileName = time() . '.' . $request->gambar->extension();
-            $request->gambar->storeAs('public/menus', $fileName); // Simpan ke storage/app/public/menu
+            $request->gambar->storeAs('public/', $fileName); // Simpan ke storage/app/public/
         } else {
-            $fileName = null;
+            dd('Gambar gak terdeteksi.');
         }
         // $gambar = null;
         // if ($request->hasFile('gambar')) {
@@ -66,6 +66,7 @@ class MenuController extends Controller
         $validated = $request->validate([
             'nama_barang' => 'required|string|max:255',
             'jumlah_barang' => 'required|integer',
+            'category' => $request->category,
             'harga_modal' => 'required|numeric',
             'harga_jual' => 'required|numeric',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',

@@ -21,6 +21,14 @@
                         <!-- form start -->
                         <form action="{{ route('menu.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
+                            @if($errors->any())
+                                <ul>
+                                    @foreach($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            @endif
+
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="nama_barang">Nama Menu</label>
@@ -88,25 +96,18 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputFile">File input</label>
                                     <div class="input-group">
-                                        <div class="custom-file">
-                                            <input type="file" name="gambar" class="custom-file-input" id="exampleInputFile">
-                                            <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                        <div class="file">
+                                            <input type="file" name="gambar" class="file-input" id="exampleInputFile">
                                         </div>
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">Upload</span>
-                                    </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                </div>
-                            </div>
+                            </div>  
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button class="btn btn-success" type="submit" name="submit"
                                     id="TambahBarangButton" onclick="tambahBarang()">
-                                    Simpan
+                                    Simpan Barang
                                 </button>
                             </div>
                         </form>
