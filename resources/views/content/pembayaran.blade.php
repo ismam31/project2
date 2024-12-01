@@ -28,6 +28,7 @@
                                                             <th>Jenis</th>
                                                             <th>Nomor Meja</th>
                                                             <th>Waktu/Tanggal</th>
+                                                            <th>Action</th>
                                                         </tr>
                                                     </thead>
                                                         <tbody>
@@ -39,6 +40,17 @@
                                                                 <td>{{ $order->category}} </td>
                                                                 <td>{{ $order->table_number ?? '-' }} </td>
                                                                 <td>{{ $order->created_at->format('H:i d F Y') }} </td>
+                                                                <td> <a href="makanan">
+                                                                        <i class="fas fa-eye"></i>
+                                                                    </a>
+                                                                    <form action="{{ route('order.destroy', $order->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Apakah anda yakin ingin menghapus data ini?')">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                        <button type="submit" style="background:none; border:none; color:red;">
+                                                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                                                        </button>
+                                                                    </form>
+                                                                </td>
                                                             </tr>
                                                             @empty
                                                             <tr>
@@ -54,6 +66,7 @@
                                                             <th>Jenis</th>
                                                             <th>Nomor Meja</th>
                                                             <th>Waktu/Tanggal</th>
+                                                            <th>Action</th>
                                                         </tr>
                                                     </thead>
                                                 </table>

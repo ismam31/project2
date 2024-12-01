@@ -27,7 +27,7 @@ class MenuController extends Controller
         // Proses upload gambar
         if ($request->hasFile('gambar')) {
             $fileName = time() . '.' . $request->gambar->extension();
-            $request->gambar->storeAs('public/', $fileName); // Simpan ke storage/app/public/
+            $request->gambar->storeAs('public/menus', $fileName); // Simpan ke storage/app/public/
         } else {
             dd('Gambar gak terdeteksi.');
         }

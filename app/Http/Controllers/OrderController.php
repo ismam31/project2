@@ -47,6 +47,17 @@ class OrderController extends Controller
         return redirect()->back()->with('success', 'Pesanan berhasil ditambahkan!');
     }
 
+    public function destroy($id)
+    {
+        // Cari menu berdasarkan ID
+        $order = Order::findOrFail($id);
+
+        // Hapus menu
+        $order->delete();
+
+        return redirect()->back()->with('success', 'Menu berhasil dihapus!');
+    }
+
 
     public function index()
     {

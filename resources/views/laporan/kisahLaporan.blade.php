@@ -12,7 +12,7 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                      <!-- Laporan Header -->
+                    <!-- Laporan Header -->
         <div class="text-center mb-3">
             <h5>{{ date('d/m/Y') }}</h5>
             <button class="btn btn-primary mt-2">Tampilkan Laporan</button>

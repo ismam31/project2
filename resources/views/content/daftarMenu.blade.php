@@ -36,7 +36,7 @@
                                             <tr>
                                                 <td hidden></td>
                                                 <td>{{ $index + 1 }}</td>
-                                                <td><img src="{{ asset('storage/' . $menu->gambar) }}" alt="{{ $menu->nama_barang }}" width="100">
+                                                <td><img src="{{ asset('storage/' . $menu->gambar) }}" alt="{{ $menu->nama_barang }}" width="50">
                                                 </td>
                                                 <td>{{ $menu -> nama_barang }}</td>
                                                 <td style="text-align:center;">{{ $menu -> jumlah_barang }}</td>

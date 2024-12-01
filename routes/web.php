@@ -17,6 +17,7 @@ Route::post('/order', [OrderController::class, 'store'])->name('order.store');
 Route::get('/pemesanan', [OrderController::class, 'create'])->name('order.create');
 Route::post('/pemesanan', [OrderController::class, 'store'])->name('order.store');
 Route::get('/pembayaran', [OrderController::class, 'index'])->name('content.pembayaran');
+Route::delete('/pemesanan/{id}', [OrderController::class, 'destroy'])->name('order.destroy');
 
 // Route::resource('menu', MenuController::class);
 Route::get('/menu', [MenuController::class, 'create'])->name('menu.create');
