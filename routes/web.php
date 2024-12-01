@@ -7,6 +7,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ReportController;
 
+
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
@@ -33,8 +34,7 @@ Route::get('/snack', [MenuController::class, 'getSnack'])->name('product.snack')
 Route::get('/kopi', [MenuController::class, 'getKopi'])->name('product.kopi');
 
 
-
-
+Route::get('/report', [ReportController::class, 'index'])->name('reports.laporan');
 Route::get('/laporan', [LaporanController::class, 'index'])->name('content.laporan');
 
 
@@ -46,7 +46,3 @@ Route::get('/dashboard', function () {
 Route::get('/profile', function () {
     return view('profile.profile');
 });
-
-
-Route::get('/laporan', [ReportController::class, 'index'])->name('reports.index');
-

@@ -21,7 +21,7 @@ class MenuController extends Controller
             'category' => 'required|in:Makanan, Minuman, Snack, Kopi',
             'harga_modal' => 'required|numeric',
             'harga_jual' => 'required|numeric',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         // Proses upload gambar
@@ -98,6 +98,12 @@ class MenuController extends Controller
         $menus = Menu::all(); // Mengambil semua data menu dari database
         return view('content.daftarMenu', compact('menus')); // Mengirim data ke view
     }
+
+    public function poran()
+    {
+        $menus = Menu::with('reports')->get();
+        return view('laporan.kisahLaporan', compact('menus'));
+    }
     
     public function getMakanan()
     {
@@ -122,4 +128,10 @@ class MenuController extends Controller
         $menus = Menu::where('category', 'Kopi')->get();
         return view('product.kopi', compact('menus'));
     }
+
+    public function reports()
+{
+    return view('content.laporan', compact('laporanDates'));
+}
+
 }

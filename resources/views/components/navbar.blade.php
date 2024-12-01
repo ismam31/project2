@@ -32,6 +32,7 @@
             <li class="nav-item mr-5">
                 <a class="nav-link active {{request()->is('laporan') ? 'bg-secondary rounded text-white' : ''}}" href="/laporan">Laporan</a>
             </li>
+
             <!-- Profile Dropdown -->
             <div class="dropdown ml-5">
                 <a class="mr-4 dropdown-toggle" href="#" role="button" id="profileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

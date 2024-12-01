@@ -23,7 +23,8 @@
                     <div class="card">
                         <div class="card-body text-center">
                             <p class="card-text font-weight-bold">{{ $date }}</p>
-                            <button class="btn btn-primary">Tampilkan Laporan</button>
+                            <a href="report"><button class="btn btn-primary">Tampilkan Laporan</button></a>
+                            
                         </div>
                     </div>
                 </div>
