@@ -28,6 +28,7 @@
             <li class="nav-item mx-3">
                 <a class="nav-link active {{request()->is('laporan') ? 'bg-primary rounded text-white' : ''}}" href="/laporan">Laporan</a>
             </li>
+
         </ul>
             <!-- Profile Dropdown -->
         <div class="navbar navbar-dropdown">

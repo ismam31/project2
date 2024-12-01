@@ -2,65 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Report;
 use Illuminate\Http\Request;
 
 class ReportController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $menus = Menu::with('reports')->get();
-        return view('laporan.kisahLaporan', compact('menus'));
-    }
+        // Contoh data laporan
+        $reports = [
+            ['name' => 'Cumi Asam Manis', 'quantity' => 6, 'total' => 170000],
+            ['name' => 'Udang Saus Tiram', 'quantity' => 7, 'total' => 180000],
+            ['name' => 'Cumi Bakar', 'quantity' => 8, 'total' => 150000],
+            ['name' => 'Etong', 'quantity' => 6, 'total' => 170000],
+            ['name' => 'Abangan', 'quantity' => 7, 'total' => 180000],
+            ['name' => 'Alamkao', 'quantity' => 8, 'total' => 150000],
+            ['name' => 'Udang Asam Manis', 'quantity' => 8, 'total' => 150000],
+            ['name' => 'Udang Saus Padang', 'quantity' => 8, 'total' => 150000],
+            ['name' => 'Udang Crispy', 'quantity' => 8, 'total' => 150000],
+            ['name' => 'Kepiting Saus Tiram', 'quantity' => 8, 'total' => 150000],
+            ['name' => 'Kepiting Asam Manis Telur', 'quantity' => 8, 'total' => 150000],
+        ];
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Report $report)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Report $report)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Report $report)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Report $report)
-    {
-        //
+        return view('reports.laporan', compact('reports'));
     }
 }
