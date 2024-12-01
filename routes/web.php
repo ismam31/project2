@@ -5,6 +5,7 @@ use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\ReportController;
 
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
@@ -37,3 +38,7 @@ Route::get('/dashboard', function () {
 Route::get('/profile', function () {
     return view('profile.profile');
 });
+
+
+Route::get('/laporan', [ReportController::class, 'index'])->name('reports.index');
+

@@ -21,4 +21,11 @@ class Menu extends Model
         'persenan',
         'gambar',
     ];
+
+    // Menu.php
+public function reports()
+{
+    return $this->hasMany(Report::class);
+}
+
 }
