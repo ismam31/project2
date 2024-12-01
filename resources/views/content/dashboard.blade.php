@@ -14,7 +14,7 @@
                         <!-- form start -->
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-12 col-sm-6 col-md-6">
+                                <div class="col-12 col-sm-4 col-md-4">
                                     <div class="info-box">
                                         <span class="info-box-icon bg-warning elevation-1"><i
                                                 class="fas fa-box"></i></span>
@@ -27,7 +27,7 @@
                                     <!-- /.info-box -->
                                 </div>
                                 <!-- /.col -->
-                                <div class="col-12 col-sm-6 col-md-6">
+                                <div class="col-12 col-sm-4 col-md-4">
                                     <div class="info-box mb-3">
                                         <span class="info-box-icon bg-success elevation-1">
                                             <i class="fas fa-money-bill"></i>
@@ -49,7 +49,7 @@
                                 <div
                                     class="clearfix hidden-md-up"
                                 ></div>
-                                <div class="col-12 col-sm-6 col-md-6">
+                                <div class="col-12 col-sm-4 col-md-4">
                                     <div class="info-box mb-3">
                                         <span
                                             class="info-box-icon bg-danger elevation-1"
@@ -70,7 +70,7 @@
                                     <!-- /.info-box -->
                                 </div>
                                 <!-- /.col -->
-                                <div class="col-12 col-sm-6 col-md-6">
+                                <div class="col-12 col-sm-4 col-md-4">
                                     <div class="info-box mb-3">
                                         <span
                                             class="info-box-icon bg-success elevation-1"
@@ -92,7 +92,7 @@
                                     </div>
                                     <!-- /.info-box -->
                                 </div>
-                                <div class="col-12 col-sm-6 col-md-6">
+                                <div class="col-12 col-sm-4 col-md-4">
                                     <div class="info-box mb-3">
                                         <span
                                             class="info-box-icon bg-success elevation-1"
@@ -132,7 +132,7 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <div id="interactive" style="height: 100px;"></div>
+                                <div id="interactive" style="height: 190px;"></div>
                             </div>
                             <!-- /.card-body-->
                         </div>

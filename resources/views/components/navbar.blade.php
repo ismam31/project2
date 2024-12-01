@@ -15,7 +15,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse d-flex justify-content-around gap-3" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link active {{request()->is('dashboard') ? 'bg-secondary rounded text-white' : ''}}" href="/dashboard">Dashboard <span class="sr-only">(current)</span></a>
@@ -29,11 +29,11 @@
             <li class="nav-item">
                 <a class="nav-link active {{request()->is('menus') ? 'bg-secondary rounded text-white' : ''}}" href="/menus">Daftar Menu</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item mr-5">
                 <a class="nav-link active {{request()->is('laporan') ? 'bg-secondary rounded text-white' : ''}}" href="/laporan">Laporan</a>
             </li>
             <!-- Profile Dropdown -->
-            <div class="dropdown">
+            <div class="dropdown ml-5">
                 <a class="mr-4 dropdown-toggle" href="#" role="button" id="profileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img src="img/profile.jpg" width="30" height="30" class="rounded-circle" alt="Profile">
                 </a>

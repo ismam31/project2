@@ -19,16 +19,9 @@
                             </div>
                         @endif
                         <!-- form start -->
-                        <form action="{{ route('menu.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('menu.update') }}" method="POST" encytype="multipart/form-data">
                             @csrf
-                            @if($errors->any())
-                                <ul>
-                                    @foreach($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            @endif
-
+                            @method('PUT')
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="nama_barang">Nama Menu</label>
@@ -39,7 +32,7 @@
                                             </span>
                                         </div>
                                         <input type="text" class="form-control" name="nama_barang" id="nama_barang"
-                                            placeholder="Nama Menu" autocomplete="off"/>
+                                            placeholder="Nama Menu" value="{{ $menu->nama_barang }}" autocomplete="off"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -51,24 +44,7 @@
                                             </span>
                                         </div>
                                         <input type="number" class="form-control" name="jumlah_barang" id="jumlah_barang"
-                                            placeholder="Jumlah Menu" autocomplete="off" data-type="currency"/>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="jenisPesanan">Kategori</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="fas fa-thumbs-up"></i>
-                                            </span>
-                                        </div>
-                                        <select class="form-control" name="category" id="metodeFormControlSelect1">
-                                            <option value="" disabled selected>Pilih Kategori</option>
-                                            <option value="Makanan" {{ old('category') == 'Makanan' ? 'selected' : '' }}>Makanan</option>
-                                            <option value="Minuman" {{ old('category') == 'Minuman' ? 'selected' : '' }}>Minuman</option>
-                                            <option value="Snack" {{ old('category') == 'Snack' ? 'selected' : '' }}>Snack</option>
-                                            <option value="Kopi" {{ old('category') == 'Kopi' ? 'selected' : '' }}>Kopi</option>
-                                        </select>
+                                            placeholder="Jumlah Menu" value="{{ $menu->jumlah_barang }}" autocomplete="off" data-type="currency"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -80,7 +56,7 @@
                                             </span>
                                         </div>
                                         <input type="number" class="form-control" name="harga_modal" id="harga_modal"
-                                            placeholder="Harga Modal" autocomplete="off" data-type="currency"/>
+                                            placeholder="Harga Modal" value="{{ $menu->harga_modal }}" autocomplete="off" data-type="currency"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -92,22 +68,29 @@
                                             </span>
                                         </div>
                                         <input type="number" class="form-control" name="harga_jual" id="harga_jual"
-                                            placeholder="Harga Jual" autocomplete="off" data-type="currency"/>
+                                            placeholder="Harga Jual" value="{{ $menu->harga_jual }}" autocomplete="off" data-type="currency"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label for="exampleInputFile">File input</label>
                                     <div class="input-group">
-                                        <div class="file">
-                                            <input type="file" name="gambar" class="file-input" id="exampleInputFile">
+                                        <div class="custom-file">
+                                            <input type="file" name="gambar" value="{{ $menu->gambar }}" class="custom-file-input" id="exampleInputFile">
+                                            <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                                         </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">Upload</span>
+                                    </div>
                                     </div>
                                 </div>
-                            </div>  
+                                <div class="form-group">
+                                </div>
+                            </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button class="btn btn-success" type="submit" name="submit"
                                     id="TambahBarangButton" onclick="tambahBarang()">
-                                    Simpan Barang
+                                    Simpan
                                 </button>
                             </div>
                         </form>
