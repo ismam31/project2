@@ -13,7 +13,6 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="" method="POST">
                             <div class="card-body">
                                 <div class="table table-responsive">
                                     <table id="daftarBarangTable"
@@ -78,7 +77,7 @@
                                     </table>
                                 </div>
                             </div>
-                        </form>    <!-- /.card-body -->
+                    <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
                 </div>

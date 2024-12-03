@@ -23,5 +23,20 @@
                 <a class="nav-link active {{request()->is('kopi') ? 'bg-light rounded' : ''}}" href="/kopi">Kopi</a>
             </li>
         </ul>
+        <div class="navbar">
+            <div class="navbar-nav ml-auto">
+                <a class="mr-4 dropdown-toggle" href="#" role="button" id="profileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="img/profile.jpg" width="30" height="30" class="rounded-circle" alt="Profile">
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
+                    <a class="dropdown-item" href="profile">Your Profile</a>
+                    <div class="dropdown-divider"></div>
+                    <form action="{{ route('logout')}}" method="POST">
+                        @csrf
+                        <button class="dropdown-item" type="submit">Sign out</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </nav>

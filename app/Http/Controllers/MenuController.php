@@ -7,7 +7,7 @@ use App\Models\Menu;
 
 class MenuController extends Controller
 {
-    
+    // Pembuatan menu
     public function create()
     {
         return view('menu.create');
@@ -18,23 +18,19 @@ class MenuController extends Controller
         $request->validate([
             'nama_barang' => 'required|string|max:255',
             'jumlah_barang' => 'required|integer',
-            'category' => 'required|in:Makanan, Minuman, Snack, Kopi',
+            'category' => 'required|in:Makanan,Minuman,Snack,Kopi',
             'harga_modal' => 'required|numeric',
             'harga_jual' => 'required|numeric',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         // Proses upload gambar
+        $fileName = null;
         if ($request->hasFile('gambar')) {
-            $fileName = time() . '.' . $request->gambar->extension();
-            $request->gambar->storeAs('public/menus', $fileName); // Simpan ke storage/app/public/
+            $fileName = $request->file('gambar')->store('menus', 'public');
         } else {
             dd('Gambar gak terdeteksi.');
         }
-        // $gambar = null;
-        // if ($request->hasFile('gambar')) {
-        //     $gambar = $request->file('gambar')->store('images', 'public');
-        // }
 
         // Hitung persenan harga jual
         $persenan = (($request->harga_jual - $request->harga_modal) / $request->harga_modal) * 100;
@@ -52,13 +48,14 @@ class MenuController extends Controller
         return redirect()->route('content.daftarMenu')->with('success', 'Menu berhasil ditambahkan.');
     }
 
+
+    // Update Menu
+
     public function edit($id)
     {
         $menu = Menu::findOrFail($id); // Cari data menu berdasarkan ID
-        return view('menu.edit', compact('menu')); // Tampilkan view edit
+        return view('menu.edit', compact('menu')); // Tampilkan view update
     }
-
-
 
     public function update(Request $request, $id)
     {
@@ -66,7 +63,7 @@ class MenuController extends Controller
         $validated = $request->validate([
             'nama_barang' => 'required|string|max:255',
             'jumlah_barang' => 'required|integer',
-            'category' => $request->category,
+            'category' => 'required|in:Makanan,Minuman,Snack,Kopi',
             'harga_modal' => 'required|numeric',
             'harga_jual' => 'required|numeric',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -74,12 +71,32 @@ class MenuController extends Controller
 
         // Cari menu berdasarkan ID
         $menu = Menu::findOrFail($id);
+        
+        $fileName = null;
+        if ($request->hasFile('gambar')) {
+            $fileName = $request->file('gambar')->store('menus', 'public');
+        } else {
+            dd('Gambar gak terdeteksi.');
+        }
 
         // Update data menu
-        $menu->update($validated);
+        $menu->nama_barang = $request->nama_barang;
+        $menu->jumlah_barang = $request->jumlah_barang;
+        $menu->harga_modal = $request->harga_modal;
+        $menu->harga_jual = $request->harga_jual;
+
+        if ($fileName) {
+            $menu->gambar = $fileName;
+        }
+
+        $menu->save();
+
 
         return redirect()->route('content.daftarMenu')->with('success', 'Menu berhasil diupdate!');
     }
+
+
+    // Delete menuu
 
     public function destroy($id)
     {
@@ -97,12 +114,6 @@ class MenuController extends Controller
     {
         $menus = Menu::all(); // Mengambil semua data menu dari database
         return view('content.daftarMenu', compact('menus')); // Mengirim data ke view
-    }
-
-    public function poran()
-    {
-        $menus = Menu::with('reports')->get();
-        return view('laporan.kisahLaporan', compact('menus'));
     }
     
     public function getMakanan()
