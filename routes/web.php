@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\PemesananController;
 
 
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login.form');
@@ -24,6 +25,9 @@ Route::delete('/pemesanan/{id}', [OrderController::class, 'destroy'])->name('ord
 Route::get('/menu', [MenuController::class, 'create'])->name('menu.create');
 Route::post('/menu', [MenuController::class, 'store'])->name('menu.store');
 Route::get('/menus', [MenuController::class, 'index'])->name('content.daftarMenu');
+Route::get('/menuss', [MenuController::class, 'menu'])->name('menus');
+Route::post('/orders', [OrderController::class, 'store'])->name('orders.store'); // Untuk simpan pesanan
+
 
 Route::get('/menu/{id}/edit', [MenuController::class, 'edit'])->name('menu.edit');
 Route::put('/menu/{id}', [MenuController::class, 'update'])->name('menu.update');
@@ -38,6 +42,10 @@ Route::get('/kopi', [MenuController::class, 'getKopi'])->name('product.kopi');
 
 Route::get('/report', [ReportController::class, 'index'])->name('reports.laporan');
 Route::get('/laporan', [LaporanController::class, 'index'])->name('content.laporan');
+
+Route::get('/pemesanan/index', [PemesananController::class, 'getMakanan', 'getMinuman', 'getSnack', 'getKopi'])->name('pemesanan.index');
+Route::post('/tambah-menu', [PemesananController::class, 'tambahMenu']);
+
 
 
 Route::get('/dashboard', function () {

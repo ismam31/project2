@@ -115,6 +115,11 @@ class MenuController extends Controller
         $menus = Menu::all(); // Mengambil semua data menu dari database
         return view('content.daftarMenu', compact('menus')); // Mengirim data ke view
     }
+    public function menu()
+    {
+        $menus = Menu::all(); // Mengambil semua data menu dari database
+        return view('menus', compact('menus')); // Mengirim data ke view
+    }
     
     public function getMakanan()
     {
@@ -141,8 +146,8 @@ class MenuController extends Controller
     }
 
     public function reports()
-{
-    return view('content.laporan', compact('laporanDates'));
-}
+    {
+        return view('content.laporan', compact('laporanDates'));
+    }
 
 }
