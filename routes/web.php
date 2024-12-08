@@ -6,7 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ReportController;
-
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
@@ -45,6 +45,6 @@ Route::get('/dashboard', function () {
 })->middleware('auth');
 
 
-Route::get('/profile', function () {
-    return view('profile.profile');
-});
+
+
+Route::resource('profiles', ProfileController::class);

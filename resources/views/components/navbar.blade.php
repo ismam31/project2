@@ -37,7 +37,7 @@
                     <img src="img/profile.jpg" width="30" height="30" class="rounded-circle" alt="Profile">
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
-                    <a class="dropdown-item" href="profile">Your Profile</a>
+                    <a class="dropdown-item" href="profiles">Your Profile</a>
                     <div class="dropdown-divider"></div>
                     <form action="{{ route('logout')}}" method="POST">
                         @csrf
