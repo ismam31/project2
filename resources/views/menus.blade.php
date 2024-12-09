@@ -29,6 +29,7 @@
                                             <button class="btn btn-success btn-add-menu" 
                                                     data-id="{{ $menu->id }}" 
                                                     data-name="{{ $menu->nama_barang }}" 
+                                                    data-name="{{ $menu->gambar }}" 
                                                     data-price="{{ $menu->harga_jual }}">
                                                 Tambah
                                             </button>

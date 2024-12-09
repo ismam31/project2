@@ -13,33 +13,33 @@
                                     <h3 class="card-title">Daftar Menu</h3>
                                 </div>
                                 <div class="card-body">
-                                <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Gambar</th>
-                                        <th>Nama Menu</th>
-                                        <th>Harga</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach($menus as $menu)
-                                    <tr>
-                                        <td><img src="{{ asset('storage/' . $menu->gambar) }}" alt="Menu" width="50"></td>
-                                        <td>{{ $menu->nama_barang }}</td>
-                                        <td>Rp. {{ number_format($menu->harga_jual) }}</td>
-                                        <td>
-                                            <button class="btn btn-success btn-add-menu" 
-                                                    data-id="{{ $menu->id }}" 
-                                                    data-name="{{ $menu->nama_barang }}" 
-                                                    data-price="{{ $menu->harga_jual }}">
-                                                Tambah
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Gambar</th>
+                                                <th>Nama Menu</th>
+                                                <th>Harga</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($menus as $menu)
+                                            <tr>
+                                                <td><img src="{{ asset('storage/' . $menu->gambar) }}" alt="Menu" width="50"></td>
+                                                <td>{{ $menu->nama_barang }}</td>
+                                                <td>Rp. {{ number_format($menu->harga_jual) }}</td>
+                                                <td>
+                                                    <button class="btn btn-success tambah-btn" 
+                                                            data-id="{{ $menu->id }}" 
+                                                            data-name="{{ $menu->nama_barang }}" 
+                                                            data-price="{{ $menu->harga_jual }}">
+                                                        Tambah
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -52,36 +52,16 @@
                                     <div class="container mt-1">
                                         <div class="menu-card">
                                             <div class="form-group d-flex align-items-center mr-auto border border-outline-secondary p-1">
-                                                <img src="{{ asset('storage/menus/nasi_goreng.jpg')}}" style="width: 100px;" alt="Menu Image">
-                                                <div class="menu-details">
-                                                    <h6 class="mb-1">Bawang Goreng</h6>
-                                                    <h6 class="text-success mt-1">Rp 10.000</h6>
+                                                <div id="order-list">
+                                                    <!-- Pesanan akan muncul di sini -->
                                                 </div>
-                                                <div class="menu-quantity ml-auto border-outline-secondary">
+                                                <!-- <div class="menu-quantity ml-auto border-outline-secondary">
                                                     <div class="menu-actions d-flex">
                                                         <button class="btn btn-outline-secondary btn-sm">-</button>
                                                         <input type="text" value="1" readonly style="width: 50px; text-align: center;">
                                                         <button class="btn btn-outline-secondary btn-sm">+</button>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="container mt-1">
-                                        <div class="menu-card">
-                                            <div class="form-group d-flex align-items-center mr-auto border border-outline-secondary p-1">
-                                                <img src="{{ asset('storage/menus/nasi_goreng.jpg')}}" style="width: 100px;" alt="Menu Image">
-                                                <div class="menu-details">
-                                                    <h6 class="mb-1">Bawang Goreng</h6>
-                                                    <h6 class="text-success mt-1">Rp 10.000</h6>
-                                                </div>
-                                                <div class="menu-quantity ml-auto border-outline-secondary">
-                                                    <div class="menu-actions d-flex">
-                                                        <button class="btn btn-outline-secondary btn-sm">-</button>
-                                                        <input type="text" value="1" readonly style="width: 50px; text-align: center;">
-                                                        <button class="btn btn-outline-secondary btn-sm">+</button>
-                                                    </div>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>
@@ -109,12 +89,9 @@
                             </div>
                         </div>
                     </div>
-
                     @push('js')
                     <script src="{{ asset('js/menu.js') }}"></script>
                     @endpush
-
-
                     <!-- form end -->
                 </div>
                 <!-- /.card -->
