@@ -10,7 +10,7 @@
                             My Profile
                         </h3>
                     </div>
-                   
+                    
                     @extends('layouts.app')
 
 @section('content')

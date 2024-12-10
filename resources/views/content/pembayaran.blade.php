@@ -40,7 +40,7 @@
                                                                 <td>{{ $order->category}} </td>
                                                                 <td>{{ $order->table_number ?? '-' }} </td>
                                                                 <td>{{ $order->created_at->format('H:i d F Y') }} </td>
-                                                                <td> <a href="makanan">
+                                                                <td> <a href="pemesanan/index">
                                                                         <i class="fas fa-eye"></i>
                                                                     </a>
                                                                     <form action="{{ route('order.destroy', $order->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Apakah anda yakin ingin menghapus data ini?')">

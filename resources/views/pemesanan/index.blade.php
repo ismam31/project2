@@ -30,7 +30,8 @@
                                                 <td>Rp. {{ number_format($menu->harga_jual) }}</td>
                                                 <td>
                                                     <button class="btn btn-success tambah-btn" 
-                                                            data-id="{{ $menu->id }}" 
+                                                            data-id="{{ $menu->id }}"
+                                                            data-image="{{ asset('storage/' . $menu->gambar) }}" 
                                                             data-name="{{ $menu->nama_barang }}" 
                                                             data-price="{{ $menu->harga_jual }}">
                                                         Tambah
@@ -49,41 +50,35 @@
                                     <h3 class="card-title">Pesanan</h3>
                                 </div>
                                 <div class="card-body">
-                                    <div class="container mt-1">
-                                        <div class="menu-card">
-                                            <div class="form-group d-flex align-items-center mr-auto border border-outline-secondary p-1">
-                                                <div id="order-list">
-                                                    <!-- Pesanan akan muncul di sini -->
-                                                </div>
-                                                <!-- <div class="menu-quantity ml-auto border-outline-secondary">
-                                                    <div class="menu-actions d-flex">
-                                                        <button class="btn btn-outline-secondary btn-sm">-</button>
-                                                        <input type="text" value="1" readonly style="width: 50px; text-align: center;">
-                                                        <button class="btn btn-outline-secondary btn-sm">+</button>
+                                    <div class="row">
+                                        <div class="container mt-1">
+                                            <div class="menu-card">
+                                                <div class="form-group d-flex align-items-center mr-auto">
+                                                    <div class="col-md-12" id="order-list">
+                                                        <!-- Pesanan akan muncul di sini -->
                                                     </div>
-                                                </div> -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="order-list">
-                                        <div class="form-group">
-                                            <label for="discount">Discount</label>
-                                            <div class="input-group">
-                                                <input type="number" class="form-control" id="discount" placeholder="Enter discount">
-                                                <div class="input-group-prepend">
-                                                    <button class="input-group-text">
-                                                        Apply
-                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <ul id="order-list" class="list-group"></ul>
-                                            <h5>Subtotal: Rp. <span id="subtotal">0</span></h5>
-                                            <button id="checkout" class="btn btn-primary btn-block">Bayar</button>
+                                        <div id="order-list">
+                                            <div class="form-group">
+                                                <label for="discount">Discount</label>
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" id="discount" placeholder="Enter discount">
+                                                    <div class="input-group-prepend">
+                                                        <button class="input-group-text">
+                                                            Apply
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="d-flex justify-content-between">
+                                                    <button class="btn btn-primary flex-grow-1 mx-1" id="pay-button">Bayar</button>
+                                                    <button class="btn btn-outline-primary flex-grow-1 mx-1" id="save-button">Simpan</button>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <h5>Subtotal: <span id="subtotal">0</span></h5>
-                                        <button class="btn btn-primary btn-block" id="pay-button">Bayar</button>
                                     </div>
                                 </div>
                             </div>
