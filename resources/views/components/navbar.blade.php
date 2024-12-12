@@ -23,7 +23,7 @@
                 <a class="nav-link active {{request()->is('pembayaran') ? 'bg-primary rounded text-white' : ''}}" href="/pembayaran">Pembayaran</a>
             </li>
             <li class="nav-item mx-3">
-                <a class="nav-link active {{request()->is('menus') ? 'bg-primary rounded text-white' : ''}}" href="/menus">Daftar Menu</a>
+                <a class="nav-link active {{request()->is('menus') ? 'bg-primary rounded text-white' : ''}}" href="/daftarMenu">Daftar Menu</a>
             </li>
             <li class="nav-item mx-3">
                 <a class="nav-link active {{request()->is('laporan') ? 'bg-primary rounded text-white' : ''}}" href="/laporan">Laporan</a>

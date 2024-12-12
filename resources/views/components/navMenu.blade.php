@@ -9,7 +9,7 @@
 
 <nav class="main-header navbar navbar-expand navbar-primary">
     <div class="collapse navbar-collapse d-flex justify-content-around" id="navbarNav">
-        <ul class="navbar-nav d-flex justify-content-center ml-auto mr-auto">
+        <ul class="navbar-nav">
             <li class="nav-item mx-3">
                 <a class="nav-link active {{request()->is('makanan') ? 'bg-light rounded' : ''}}" href="/makanan">Makanan<span class="sr-only">(current)</span></a>
             </li>
@@ -23,10 +23,5 @@
                 <a class="nav-link active {{request()->is('kopi') ? 'bg-light rounded' : ''}}" href="/kopi">Kopi</a>
             </li>
         </ul>
-        <div class="navbar">
-            <div class="navbar-nav ml-auto">
-                <i class="fas fa-shopping-cart" style="color: black;"></i>
-            </div>
-        </div>
     </div>
 </nav>

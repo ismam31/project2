@@ -25,7 +25,7 @@ Route::delete('/pemesanan/{id}', [OrderController::class, 'destroy'])->name('ord
 // Route::resource('menu', MenuController::class);
 Route::get('/menu', [MenuController::class, 'create'])->name('menu.create');
 Route::post('/menu', [MenuController::class, 'store'])->name('menu.store');
-Route::get('/menus', [MenuController::class, 'index'])->name('content.daftarMenu');
+Route::get('/daftarMenu', [MenuController::class, 'index'])->name('content.daftarMenu');
 Route::get('/menuss', [MenuController::class, 'menu'])->name('menus');
 Route::post('/orders', [OrderController::class, 'store'])->name('orders.store'); // Untuk simpan pesanan
 

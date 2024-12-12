@@ -10,7 +10,7 @@
                         <div class="col-md-6">
                             <div class="card">
                                 <div class="card-header bg-primary">
-                                    <h3 class="card-title">Daftar Menu</h3>
+                                    <x-navMenu></x-navMenu>
                                 </div>
                                 <div class="card-body">
                                     <table class="table">
@@ -42,7 +42,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
+                            </div>  
                         </div>
                         <div class="col-md-6">
                             <div class="card">
