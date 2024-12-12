@@ -145,8 +145,10 @@
         <!-- /.row -->
     </div>
     <!-- /.container-fluid -->
-
-    <script>
+    @push('js')
+    <script src="{{ asset('js/sensor.js') }}"></script>
+    @endpush
+    <!-- <script>
         $(function () {
                     /*
             * Flot Interactive Chart
@@ -248,5 +250,5 @@
                 * END INTERACTIVE CHART
                 */
         })
-    </script>
+    </script> -->
 </x-layout>

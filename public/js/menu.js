@@ -1,9 +1,12 @@
-let orders = [];
-let subtotal = 0;
-
 document.addEventListener('DOMContentLoaded', function () {
     const orderList = document.getElementById('order-list');
     const subtotalElement = document.getElementById('subtotal');
+    const discountInput = document.getElementById('discount');
+    const applyButton = document.querySelector('.input-group-text'); // Tombol Apply
+
+    let orders = [];
+    let subtotal = 0;
+    let discount = 0;
 
     // Fungsi untuk render pesanan di UI
     function renderOrders() {
@@ -28,8 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
             orderList.appendChild(div);
         });
 
-        // Update subtotal
-        subtotalElement.textContent = `Rp ${Number(subtotal).toLocaleString()}`;
+        // Update subtotal dengan diskon
+        const discountedTotal = subtotal - discount;
+        subtotalElement.textContent = `Rp ${Number(discountedTotal > 0 ? discountedTotal : 0).toLocaleString()}`;
 
         // Tambahkan event listener untuk tombol +/- setelah render ulang
         addQuantityListeners();
@@ -88,5 +92,17 @@ document.addEventListener('DOMContentLoaded', function () {
             subtotal += menuPrice;
             renderOrders();
         });
+    });
+
+    // Event listener untuk tombol Apply
+    applyButton.addEventListener('click', function () {
+        const discountValue = parseInt(discountInput.value) || 0;
+
+        if (discountValue >= 0 && discountValue <= subtotal) {
+            discount = discountValue;
+            renderOrders();
+        } else {
+            alert('Diskon tidak valid!');
+        }
     });
 });
