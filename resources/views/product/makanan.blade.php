@@ -6,12 +6,10 @@
                 <!-- jquery validation -->
                 <div class="card card-primary">
                     <!-- form start -->
-                    <div class="row">
+                    <div class="row">   
                         <div class="col-md-6">
                             <div class="card">
-                                <div class="card-header bg-primary">
-                                    <x-navMenu></x-navMenu>
-                                </div>
+                                <x-navMenu></x-navMenu>
                                 <div class="card-body">
                                     <table class="table">
                                         <thead>

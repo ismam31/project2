@@ -45,7 +45,7 @@ class MenuController extends Controller
             'gambar' => $fileName,
         ]);
 
-        return redirect()->route('content.daftarMenu')->with('success', 'Menu berhasil ditambahkan.');
+        return redirect()->route('daftarMenu.index')->with('success', 'Menu berhasil ditambahkan.');
     }
 
 
@@ -92,7 +92,7 @@ class MenuController extends Controller
         $menu->save();
 
 
-        return redirect()->route('content.daftarMenu')->with('success', 'Menu berhasil diupdate!');
+        return redirect()->route('daftarMenu.index')->with('success', 'Menu berhasil diupdate!');
     }
 
 
@@ -113,7 +113,7 @@ class MenuController extends Controller
     public function index()
     {
         $menus = Menu::all(); // Mengambil semua data menu dari database
-        return view('content.daftarMenu', compact('menus')); // Mengirim data ke view
+        return view('daftarMenu.index', compact('menus')); // Mengirim data ke view
     }
     public function menu()
     {

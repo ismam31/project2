@@ -19,7 +19,7 @@
                             </div>
                         @endif
                         <!-- form start -->
-                        <form action="{{ route('menu.update') }}" method="POST" encytype="multipart/form-data">
+                        <form action="{{ route('menu.update', $menu->id) }}" method="POST" encytype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="card-body">

@@ -13,8 +13,12 @@ return new class extends Migration
     {
         Schema::create('sensor_data', function (Blueprint $table) {
             $table->id();
-            $table->integer('sensor_value');
+            $table->float('gas_value');
+            $table->float('treshold');
+            $table->varchar('gas_status');
+            $table->varchar('buzzer_status');
             $table->timestamps();
+            $table->varchar('location');
         });
     }
 
