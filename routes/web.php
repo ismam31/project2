@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\OrderController;
+use App\Http\Controllers\UserPesanController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ProfileController;
@@ -14,20 +14,21 @@ Route::get('/', [AuthController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::post('/order', [OrderController::class, 'store'])->name('order.store');
+Route::post('/order', [UserPesanController::class, 'store'])->name('order.store');
 
 
-Route::get('/pemesanan', [OrderController::class, 'create'])->name('order.create');
-Route::post('/pemesanan', [OrderController::class, 'store'])->name('order.store');
-Route::get('/pembayaran', [OrderController::class, 'index'])->name('content.pembayaran');
-Route::delete('/pemesanan/{id}', [OrderController::class, 'destroy'])->name('order.destroy');
+Route::get('/pemesanan', [UserPesanController::class, 'create'])->name('order.create');
+Route::post('/pemesanan', [UserPesanController::class, 'store'])->name('order.store');
+Route::get('/pembayaran', [UserPesanController::class, 'index'])->name('content.pembayaran');
+Route::delete('/pemesanan/{id}', [UserPesanController::class, 'destroy'])->name('order.destroy');
 
 // Route::resource('menu', MenuController::class);
 Route::get('/menu', [MenuController::class, 'create'])->name('menu.create');
 Route::post('/menu', [MenuController::class, 'store'])->name('menu.store');
 Route::get('/menus', [MenuController::class, 'index'])->name('content.daftarMenu');
 Route::get('/menuss', [MenuController::class, 'menu'])->name('menus');
-Route::post('/orders', [OrderController::class, 'store'])->name('orders.store'); // Untuk simpan pesanan
+Route::post('/orders', [UserPesanController::class, 'store'])->name('orders.store'); // Untuk simpan pesanan
+Route::get('/orders', [UserPesanController::class, 'index'])->name('orders.index'); // Untuk simpan pesanan
 
 
 Route::get('/menu/{id}/edit', [MenuController::class, 'edit'])->name('menu.edit');

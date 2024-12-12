@@ -5,8 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Order;
 
-class OrderController extends Controller
+class UserPesanController extends Controller
 {
+    public function index()
+    {
+        // Ambil semua data pesanan dari database
+        $orders = Order::orderBy('created_at', 'desc')->get();
+    
+        // Kirim data ke view
+        return view('content.pembayaran', compact('orders'));
+    }
+    
     public function create()
     {
         return view('content.pemesanan');
@@ -35,14 +44,14 @@ class OrderController extends Controller
         ]);
     
         // Ambil data menu berdasarkan ID
-        $menu = Menu::findOrFail($request->menu_id);
+        // $menu = Menu::findOrFail($request->menu_id);
     
         // Simpan ke tabel pemesanan
-        Order::create([
-            'menu_id' => $menu->id,
-            'jumlah' => 1, // Default jumlah 1
-            'total_harga' => $menu->harga_jual,
-        ]);
+        // Order::create([
+        //     'menu_id' => $menu->id,
+        //     'jumlah' => 1, // Default jumlah 1
+        //     'total_harga' => $menu->harga_jual,
+        // ]);
 
         return redirect()->back()->with('success', 'Pesanan berhasil ditambahkan!');
     }
@@ -59,13 +68,5 @@ class OrderController extends Controller
     }
 
 
-    public function index()
-    {
-        // Ambil semua data pesanan dari database
-        $orders = Order::orderBy('created_at', 'desc')->get();
-
-        // Kirim data ke view
-        return view('content.pembayaran', compact('orders'));
-    }
 
 }

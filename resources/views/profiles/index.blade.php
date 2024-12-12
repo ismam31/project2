@@ -15,7 +15,7 @@
 
 @section('content')
 <div class="container">
-    <h1>Isi Profile</h1>
+    <h1>Pengaturan Profile</h1>
     <a href="{{ route('profiles.create') }}" class="btn btn-primary">Tambah Profile</a>
     <table class="table mt-3">
         <thead>
