@@ -76,7 +76,7 @@
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">
-                                                <i class="fas fa-users"></i>
+                                            <i class="fas fa-dollar-sign" style="font-size: 22px;"></i>
                                             </span>
                                         </div>
                                         <input type="number" class="form-control" name="harga_modal" id="harga_modal"
@@ -88,7 +88,7 @@
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">
-                                                <i class="fas fa-users"></i>
+                                            <i class="fas fa-dollar-sign" style="font-size: 22px;"></i>
                                             </span>
                                         </div>
                                         <input type="number" class="form-control" name="harga_jual" id="harga_jual"

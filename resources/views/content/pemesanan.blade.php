@@ -54,7 +54,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="jenisPesanan">Pilih Kategori</label>
+                                    <label for="jenisPesanan">Kategori</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">
