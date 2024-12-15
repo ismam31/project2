@@ -5,7 +5,7 @@
                 <div class="col-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <a href="menu">
+                            <a href="{{ route('daftarMenu.create') }}">
                                 <h3 class="card-title text-white">
                                     Tambah Menu
                                 </h3>
@@ -43,11 +43,11 @@
                                                 <td style="text-align:right;">{{ number_format ( $menu -> harga_jual ) }}</td>
                                                 <td style="text-align:center;">
                                                     <!-- Edit Button -->
-                                                    <a href="{{ route('menu.edit', $menu->id) }}">
+                                                    <a href="{{ route('daftarMenu.edit', $menu->id) }}">
                                                         <i class="fas fa-edit fa-2x" aria-hidden="true"></i>
                                                     </a>
                                                     <!-- Delete Button -->
-                                                    <form action="{{ route('menu.destroy', $menu->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Apakah anda yakin ingin menghapus data ini?')">
+                                                    <form action="{{ route('daftarMenu.destroy', $menu->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Apakah anda yakin ingin menghapus data ini?')">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" style="background:none; border:none; color:red;">
