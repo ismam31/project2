@@ -59,7 +59,6 @@ class MenuController extends Controller
     }
 
     public function update(Request $request, $id)
-<<<<<<< HEAD
     {
         // Validasi input
         $validated = $request->validate([
@@ -70,19 +69,6 @@ class MenuController extends Controller
             'harga_jual' => 'required|numeric',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
         ]);
-=======
-{
-    // Validasi input
-    dd('Masuk method update', $request->all());
-    $validated = $request->validate([
-        'nama_barang' => 'required|string|max:255',
-        'jumlah_barang' => 'required|integer',
-        'category' => 'required|in:Makanan,Minuman,Snack,Kopi',
-        'harga_modal' => 'required|numeric',
-        'harga_jual' => 'required|numeric',
-        'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-    ]);
->>>>>>> 008b90d388072ec508431ad632cce0431a3d1223
 
     // Cari menu berdasarkan ID
     $menu = Menu::findOrFail($id);
