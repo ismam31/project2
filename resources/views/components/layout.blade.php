@@ -11,8 +11,13 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"/>
         <!-- Font Awesome -->
         <link rel="stylesheet" href="{{asset('assets/plugins/fontawesome-free/css/all.min.css')}}"/>
+<<<<<<< HEAD
         <!-- Sweetalert -->
         <link rel="stylesheet" href="{{asset('assets/plugins/sweetalert2/sweetalert2.min.css')}}"/>
+=======
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+>>>>>>> 008b90d388072ec508431ad632cce0431a3d1223
     </head>
 
     <body> 
