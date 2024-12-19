@@ -47,14 +47,15 @@
                                                         <i class="fas fa-edit fa-2x" aria-hidden="true"></i>
                                                     </a>
                                                     <!-- Delete Button -->
-                                                    <form action="{{ route('menu.destroy', $menu->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Apakah anda yakin ingin menghapus data ini?')">
+                                                    <form action="{{ route('menu.destroy', $menu->id) }}" method="POST" style="display:inline;" id="deleteForm-{{ $menu->id }}">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit" style="background:none; border:none; color:red;">
+                                                        <button type="button" id="deleteButton" data-url="{{ route('menu.destroy', $menu->id) }}" style="background:none; border:none; color:red;">
                                                             <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
                                                         </button>
                                                     </form>
                                                 </td>
+
                                             </tr>
                                             @empty
                                             <tr>
@@ -87,4 +88,7 @@
         </div>
         <!-- /.container-fluid -->
     </section>
+    @push('js')
+    <script src="{{ asset('js/delete.js') }}"></script>
+    @endpush
 </x-layout>

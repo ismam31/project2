@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Menu;
 
 class MenuController extends Controller
@@ -21,7 +22,7 @@ class MenuController extends Controller
             'category' => 'required|in:Makanan,Minuman,Snack,Kopi',
             'harga_modal' => 'required|numeric',
             'harga_jual' => 'required|numeric',
-            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
         ]);
 
         // Proses upload gambar
@@ -66,7 +67,7 @@ class MenuController extends Controller
             'category' => 'required|in:Makanan,Minuman,Snack,Kopi',
             'harga_modal' => 'required|numeric',
             'harga_jual' => 'required|numeric',
-            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
         ]);
 
         // Cari menu berdasarkan ID
@@ -103,10 +104,14 @@ class MenuController extends Controller
         // Cari menu berdasarkan ID
         $menu = Menu::findOrFail($id);
 
+        if ($menu->gambar) {
+            Storage::disk('public')->delete($menu->gambar);
+        }
+
         // Hapus menu
         $menu->delete();
 
-        return redirect()->back()->with('success', 'Menu berhasil dihapus!');
+        return redirect()->back();
     }
 
     

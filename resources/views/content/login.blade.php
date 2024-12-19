@@ -37,7 +37,7 @@
                     </div>
                     <div class="form-floating m-3">
                         <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
-                        <label for="floatingPassword">Password</label>
+                        <label for="floatingPassword">Password <span><i class="fas fa-eye"></i></span></label>
                     </div>
                     <button type="submit" class="btn btn-primary m-3">Submit</button>
                     <!-- Menampilkan pesan error -->
