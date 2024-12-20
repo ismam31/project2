@@ -59,57 +59,44 @@ class MenuController extends Controller
     }
 
     public function update(Request $request, $id)
-<<<<<<< HEAD
     {
         // Validasi input
+        dd('Masuk method update', $request->all());
         $validated = $request->validate([
             'nama_barang' => 'required|string|max:255',
             'jumlah_barang' => 'required|integer',
             'category' => 'required|in:Makanan,Minuman,Snack,Kopi',
             'harga_modal' => 'required|numeric',
             'harga_jual' => 'required|numeric',
-            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-=======
-{
-    // Validasi input
-    dd('Masuk method update', $request->all());
-    $validated = $request->validate([
-        'nama_barang' => 'required|string|max:255',
-        'jumlah_barang' => 'required|integer',
-        'category' => 'required|in:Makanan,Minuman,Snack,Kopi',
-        'harga_modal' => 'required|numeric',
-        'harga_jual' => 'required|numeric',
-        'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-    ]);
->>>>>>> 008b90d388072ec508431ad632cce0431a3d1223
 
-    // Cari menu berdasarkan ID
-    $menu = Menu::findOrFail($id);
+        // Cari menu berdasarkan ID
+        $menu = Menu::findOrFail($id);
 
-    // Cek apakah file gambar ada
-    $fileName = null;
-    if ($request->hasFile('gambar')) {
-        $fileName = $request->file('gambar')->store('menus', 'public');
-    } else {
-        // Gambar tidak terdeteksi
-        dd('Gambar tidak terdeteksi.');
+        // Cek apakah file gambar ada
+        $fileName = null;
+        if ($request->hasFile('gambar')) {
+            $fileName = $request->file('gambar')->store('menus', 'public');
+        } else {
+            // Gambar tidak terdeteksi
+            dd('Gambar tidak terdeteksi.');
+        }
+
+        // Update data menu
+        $menu->nama_barang = $request->nama_barang;
+        $menu->jumlah_barang = $request->jumlah_barang;
+        $menu->harga_modal = $request->harga_modal;
+        $menu->harga_jual = $request->harga_jual;
+
+        if ($fileName) {
+            $menu->gambar = $fileName;
+        }
+
+        $menu->save();
+
+        return redirect()->route('daftarMenu.index')->with('success', 'Menu berhasil diupdate!');
     }
-
-    // Update data menu
-    $menu->nama_barang = $request->nama_barang;
-    $menu->jumlah_barang = $request->jumlah_barang;
-    $menu->harga_modal = $request->harga_modal;
-    $menu->harga_jual = $request->harga_jual;
-
-    if ($fileName) {
-        $menu->gambar = $fileName;
-    }
-
-    $menu->save();
-
-    return redirect()->route('daftarMenu.index')->with('success', 'Menu berhasil diupdate!');
-}
 
 
 
@@ -170,5 +157,6 @@ class MenuController extends Controller
     {
         return view('content.laporan', compact('laporanDates'));
     }
+
 
 }

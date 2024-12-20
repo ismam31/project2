@@ -61,6 +61,9 @@
                                             </div>
                                         </div>
                                         <div id="order-list">
+                                            <div class="col-md-12">
+                                                <h5>Total: <span id="subtotal"> 0</span></h5>
+                                            </div>
                                             <div class="form-group">
                                                 <label for="discount">Discount</label>
                                                 <div class="input-group">
@@ -72,14 +75,15 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-12">
-                                                <h5>Subtotal: <span id="subtotal"> 0</span></h5>
-                                                <div class="d-flex justify-content-between">
-                                                    <button class="btn btn-primary flex-grow-1 mx-1" id="pay-button">Bayar</button>
-                                                    <button class="btn btn-outline-primary flex-grow-1 mx-1" id="save-button">Simpan</button>
-                                                </div>
+                                            <select name="" id="">
+                                                <option value="" disabled selected>Pilih Pembayaran</option>
+                                                <option value="DANA">DANA</option>
+                                                <option value="OVO">OVO</option>
+                                            </select>
+                                            <div class="d-flex justify-content-between">
+                                                <button class="btn btn-primary flex-grow-1 mx-1" id="pay-button">Bayar</button>
+                                                <button class="btn btn-outline-primary flex-grow-1 mx-1" id="save-button">Simpan</button>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>

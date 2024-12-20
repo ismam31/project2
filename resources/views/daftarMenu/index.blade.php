@@ -47,11 +47,7 @@
                                                         <i class="fas fa-edit fa-2x" aria-hidden="true"></i>
                                                     </a>
                                                     <!-- Delete Button -->
-<<<<<<< HEAD
-                                                    <form action="{{ route('menu.destroy', $menu->id) }}" method="POST" style="display:inline;" id="deleteForm-{{ $menu->id }}">
-=======
                                                     <form action="{{ route('daftarMenu.destroy', $menu->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Apakah anda yakin ingin menghapus data ini?')">
->>>>>>> 008b90d388072ec508431ad632cce0431a3d1223
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="button" id="deleteButton" data-url="{{ route('menu.destroy', $menu->id) }}" style="background:none; border:none; color:red;">

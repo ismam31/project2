@@ -59,6 +59,7 @@
                                             </div>
                                         </div>
                                         <div id="order-list">
+                                                <h5>Subtotal: <span id="subtotal"> 0</span></h5>
                                             <div class="form-group">
                                                 <label for="discount">Discount</label>
                                                 <div class="input-group">
@@ -69,9 +70,11 @@
                                                         </button>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <h5>Subtotal: <span id="subtotal"> 0</span></h5>
+                                                <select class="form-control" name="" id="">
+                                                    <option value="" disabled selected>Pilih Pembayaran</option>
+                                                    <option value="DANA">DANA</option>
+                                                    <option value="OVO">OVO</option>
+                                                </select>
                                                 <div class="d-flex justify-content-between">
                                                     <button class="btn btn-primary flex-grow-1 mx-1" id="pay-button">Bayar</button>
                                                     <button class="btn btn-outline-primary flex-grow-1 mx-1" id="save-button">Simpan</button>
