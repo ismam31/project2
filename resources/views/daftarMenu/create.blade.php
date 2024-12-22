@@ -55,7 +55,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="jenisPesanan">Kategori</label>
+                                    <label for="jenisPesanan">Jenis Menu</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">
@@ -63,7 +63,7 @@
                                             </span>
                                         </div>
                                         <select class="form-control" name="category" id="metodeFormControlSelect1">
-                                            <option value="" disabled selected>Pilih Kategori</option>
+                                            <option value="" disabled selected>Pilih Jenis Menu</option>
                                             <option value="Makanan" {{ old('category') == 'Makanan' ? 'selected' : '' }}>Makanan</option>
                                             <option value="Minuman" {{ old('category') == 'Minuman' ? 'selected' : '' }}>Minuman</option>
                                             <option value="Snack" {{ old('category') == 'Snack' ? 'selected' : '' }}>Snack</option>

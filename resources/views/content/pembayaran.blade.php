@@ -24,9 +24,9 @@
                                                     <thead>
                                                         <tr>
                                                             <th>No</th>
-                                                            <th>Nama</th>
-                                                            <th>Jumlah Tamu</th>
-                                                            <th>Jenis</th>
+                                                            <th>Nama Pelanggan</th>
+                                                            <th>Jumlah Pelanggan</th>
+                                                            <th>Jenis Pemesanan</th>
                                                             <th>Nomor Meja</th>
                                                             <th>Waktu/Tanggal</th>
                                                             <th>Action</th>
@@ -62,9 +62,9 @@
                                                     <thead>
                                                         <tr>
                                                             <th>No</th>
-                                                            <th>Nama</th>
-                                                            <th>Jumlah Tamu</th>
-                                                            <th>Jenis</th>
+                                                            <th>Nama Pelanggan</th>
+                                                            <th>Jumlah Pelanggan</th>
+                                                            <th>Jenis Pemesanan</th>
                                                             <th>Nomor Meja</th>
                                                             <th>Waktu/Tanggal</th>
                                                             <th>Action</th>

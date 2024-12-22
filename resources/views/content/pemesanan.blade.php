@@ -6,7 +6,7 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Pesan Baru</h3>
+                            <h3 class="card-title">Pelanggan Baru</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- Tampilkan pesan sukses -->
@@ -30,7 +30,7 @@
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="namaTamu">Nama</label>
+                                    <label for="">Nama Pelanggan</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">
@@ -38,23 +38,23 @@
                                             </span>
                                         </div>
                                         <input type="text" class="form-control" name="name" id="namaTamu"
-                                            placeholder="Nama" autocomplete="off" value="{{ old('name') }}" />
+                                            placeholder="Nama Pelanggan" autocomplete="off" value="{{ old('name') }}" />
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="jumlahTamu">Jumlah Tamu</label>
+                                    <label for="jumlahPelanggan">Jumlah Pelanggan</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">
                                                 <i class="fas fa-users"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" name="guest_count" id="jumlahTamu"
-                                            placeholder="Jumlah Tamu" autocomplete="off" data-type="currency" value="{{ old('guest_count') }}" />
+                                        <input type="text" class="form-control" name="guest_count" id="jumlahPelanggan"
+                                            placeholder="Jumlah Pelanggan" autocomplete="off" data-type="currency" value="{{ old('guest_count') }}" />
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="jenisPesanan">Kategori</label>
+                                    <label for="jenisPesanan">Jenis Pemesanan</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">
@@ -62,7 +62,7 @@
                                             </span>
                                         </div>
                                         <select class="form-control" name="category" id="metodeFormControlSelect1">
-                                            <option value="" disabled selected>Pilih Kategori</option>
+                                            <option value="" disabled selected>Pilih Jenis Pemesanan</option>
                                             <option value="Dine In" {{ old('category') == 'Dine In' ? 'selected' : '' }}>Dine In</option>
                                             <option value="Take Away" {{ old('category') == 'Take Away' ? 'selected' : '' }}>Take Away</option>
                                             <option value="Delivery" {{ old('category') == 'Delivery' ? 'selected' : '' }}>Delivery</option>
@@ -85,9 +85,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button class="btn btn-success" type="submit" name="submit"
-                                    id="TambahBarangButton" onclick="tambahBarang()">
-                                    Tambah Pesan
-                                </button>
+                                    id="TambahBarangButton" onclick="tambahBarang()">Tambah Pelanggan</button>
                             </div>
                         </form>
                     </div>
