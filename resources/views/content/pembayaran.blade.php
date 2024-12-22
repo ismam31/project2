@@ -1,16 +1,4 @@
-<!DOCTYPE html>
- <html lang="en">
-     <head>
-         <meta charset="UTF-8">
-         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-         <title>Daftar Pesanan</title>
-          <style> 
-          th { 
-            color: #000000; /* Warna hitam pekat */ 
-            font-weight: bold; /* Teks tebal */
-             } 
-          </style> 
-     </head> 
+
 <x-layout>
     
 <div class="content mt-3">
@@ -56,10 +44,10 @@
                                                                 <td> <a href="makanan">
                                                                         <i class="fas fa-eye"></i>
                                                                     </a>
-                                                                    <form action="{{ route('order.destroy', $order->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Apakah anda yakin ingin menghapus data ini?')">
+                                                                    <form action="{{ route('order.destroy', $order->id) }}" method="POST" style="display:inline;">
                                                                     @csrf
                                                                     @method('DELETE')
-                                                                        <button type="submit" style="background:none; border:none; color:red;">
+                                                                        <button type="submit" id="deleteButton" style="background:none; border:none; color:red;">
                                                                             <i class="fa fa-trash" aria-hidden="true"></i>
                                                                         </button>
                                                                     </form>
@@ -83,6 +71,9 @@
                                                         </tr>
                                                     </thead>
                                                 </table>
+                                                @push('js')
+                                                <script src="{{ asset('js/delete.js') }}"></script>
+                                                @endpush
                                             </div>
                                         </div>
                                         <!-- /.info-box-content -->

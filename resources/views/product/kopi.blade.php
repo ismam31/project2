@@ -59,25 +59,7 @@
                                             </div>
                                         </div>
                                         <div id="order-list">
-                                            <div class="form-group">
-                                                <label for="discount">Discount</label>
-                                                <div class="input-group">
-                                                    <input type="number" class="form-control" id="discount" placeholder="Enter discount">
-                                                    <div class="input-group-prepend">
-                                                        <button class="input-group-text">
-                                                            Apply
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <h5>Subtotal: <span id="subtotal"> 0</span></h5>
-                                                <div class="d-flex justify-content-between">
-                                                    <button class="btn btn-primary flex-grow-1 mx-1" id="pay-button">Bayar</button>
-                                                    <button class="btn btn-outline-primary flex-grow-1 mx-1" id="save-button">Simpan</button>
-                                                </div>
-                                            </div>
-
+                                            <x-button></x-button>
                                         </div>
                                     </div>
                                 </div>

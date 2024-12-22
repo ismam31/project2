@@ -39,7 +39,7 @@
                     <form action="{{ route('profiles.destroy', $profile->id) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Hapus</button>
+                        <button type="submit" id="deleteButton" class="btn btn-danger">Hapus</button>
                     </form>
                 </td>
             </tr>
@@ -55,4 +55,7 @@
     </div>
     <!-- /.row -->
 </div>
+@push('js')
+<script src="{{ asset('js/delete.js') }}"></script>
+@endpush
 </x-layout>

@@ -59,18 +59,6 @@
                                             </div>
                                         </div>
                                         <div id="order-list">
-                                                <h5>Subtotal: <span id="subtotal"> 0</span></h5>
-                                            <div class="form-group">
-                                                <label for="discount">Discount</label>
-                                                <div class="input-group">
-                                                    <input type="number" class="form-control" id="discount" placeholder="Enter discount">
-                                                    <div class="input-group-prepend">
-                                                        <button class="input-group-text">
-                                                            Apply
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
                                             <x-button></x-button>
                                         </div>
                                     </div>
