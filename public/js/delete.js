@@ -5,20 +5,21 @@ $(function () {
         var form = $(this).closest('form'); // Ambil form terdekat tombol
 
         Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
+            title: "Apakah kamu yakin ?",
+            text: "Anda tidak akan dapat mengembalikan data ini!",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
+            cancelButtonText: "Batal",
+            confirmButtonText: "Ya, hapus!"
         }).then((result) => {
             if (result.isConfirmed) {
                 // Tampilkan SweetAlert kedua setelah confirm
                 Swal.fire({
-                    title: "Deleted!",
-                    text: "Your file has been deleted.",
-                    icon: "success",
+                    title: "Hapus!",
+                    text: "Data anda telah dihapus.",
+                    icon: "Berhasil",
                     confirmButtonText: "OK",
                 }).then(() => {
                     form.submit(); // Submit form manual setelah popup kedua selesai
