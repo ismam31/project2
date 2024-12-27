@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class MenuController extends Controller
+class ProductController extends Controller
 {
     public function index()
     {
-        return response()->json(Menu::all(), 200);
+        return response()->json(Product::all(), 200);
     }
 
     public function store(Request $request)
@@ -20,27 +20,27 @@ class MenuController extends Controller
             'kategori' => 'required|string|max:255',
         ]);
 
-        $menu = Menu::create($validatedData);
+        $product = Product::create($validatedData);
 
-        return response()->json($menu, 201);
+        return response()->json($product, 201);
     }
 
     public function show($id)
     {
-        $menu = Menu::find($id);
+        $product = Product::find($id);
 
-        if (!$menu) {
+        if (!$product) {
             return response()->json(['message' => 'Menu not found'], 404);
         }
 
-        return response()->json($menu, 200);
+        return response()->json($product, 200);
     }
 
     public function update(Request $request, $id)
     {
-        $menu = Menu::find($id);
+        $product = Product::find($id);
 
-        if (!$menu) {
+        if (!$product) {
             return response()->json(['message' => 'Menu not found'], 404);
         }
 
@@ -50,20 +50,20 @@ class MenuController extends Controller
             'kategori' => 'string|max:255',
         ]);
 
-        $menu->update($validatedData);
+        $product->update($validatedData);
 
-        return response()->json($menu, 200);
+        return response()->json($product, 200);
     }
 
     public function destroy($id)
     {
-        $menu = Menu::find($id);
+        $product = Product::find($id);
 
-        if (!$menu) {
+        if (!$product) {
             return response()->json(['message' => 'Menu not found'], 404);
         }
 
-        $menu->delete();
+        $product->delete();
 
         return response()->json(['message' => 'Menu deleted successfully'], 200);
     }
