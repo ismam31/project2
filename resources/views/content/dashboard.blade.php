@@ -120,7 +120,7 @@
                             <div class="card-header">
                                 <h3 class="card-title">
                                 <i class="far fa-chart-bar"></i>
-                                <button type="button" class="btn btn-default btn-sm" id="realtime_button">Interactive Area Chart</button type="button" class="btn btn-default btn-sm" id="realtime_button">
+                                <button type="button" class="btn btn-default btn-sm" id="realtime_button">Interactive Area Chart</button>
                                 </h3>
                                 <div class="card-tools">
                                 Real time
