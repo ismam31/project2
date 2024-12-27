@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sensor_data', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->float('gas_value');
-            $table->float('treshold');
-            $table->string('gas_status');
-            $table->string('buzzer_status');
+            $table->string('nama');
+            $table->double('harga');
+            $table->string('kategori');
             $table->timestamps();
-            $table->string('location');
         });
     }
 
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sensor_data');
+        Schema::dropIfExists('products');
     }
 };
