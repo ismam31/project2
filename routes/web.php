@@ -8,6 +8,7 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PemesananController;
+use App\Http\Controllers\PaymentController;
 
 
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login.form');
@@ -48,7 +49,7 @@ Route::get('/kopi', [MenuController::class, 'getKopi'])->name('product.kopi');
 
 
 Route::get('/report', [ReportController::class, 'index'])->name('reports.laporan');
-Route::get('/laporan', [LaporanController::class, 'index'])->name('content.laporan');
+Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
 
 Route::get('/pemesanan/index', [PemesananController::class, 'getMakanan', 'getMinuman', 'getSnack', 'getKopi'])->name('pemesanan.index');
 Route::post('/tambah-menu', [PemesananController::class, 'tambahMenu']);
@@ -63,3 +64,7 @@ Route::get('/dashboard', function () {
 
 
 Route::resource('profiles', ProfileController::class);
+
+
+Route::get('/payment', [PaymentController::class, 'index'])->name('pembayaran.index');
+Route::post('/payment/proses', [PaymentController::class, 'processPayment'])->name('pembayaran.process');
